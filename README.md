@@ -17,7 +17,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 - name: Copy
   uses: andstor/copycat-action@v3
   with:
-    personal_token: ${{ secrets.PERSONAL_TOKEN }}
+    destination_token: ${{ secrets.DESTINATION_TOKEN }}
     src_path: /.
     dst_path: /backup/
     dst_owner: andstor
@@ -48,7 +48,7 @@ The following input variable options can/must be configured:
 
 ## Secrets
 
-* `personal_token`: (required) GitHub Private Access Token used for the clone/push operations. To create it follow the [GitHub Documentation](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
+* `destination_token`: (required) GitHub Private Access Token used for the push operations to the destination. To create it follow the [GitHub Documentation](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
 
 ## Filtering
 Copycat provides several ways of filtering which files you want to copy.  
@@ -82,7 +82,7 @@ jobs:
     - name: Copycat
       uses: andstor/copycat-action@v3
       with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        destination_token: ${{ secrets.DESTINATION_TOKEN }}
         src_path: /.
         dst_path: /wiki/
         dst_owner: andstor

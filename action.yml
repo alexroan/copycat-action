@@ -5,7 +5,7 @@ branding:
   icon: 'copy'
   color: 'red'
 inputs:
-  personal_token:
+  destination_token:
     description: 'Personal access token'
     required: true
   src_path:
@@ -62,7 +62,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.personal_token }}
+    - ${{ inputs.destination_token }}
     - ${{ inputs.src_path }}
     - ${{ inputs.dst_path }}
     - ${{ inputs.dst_owner }}
